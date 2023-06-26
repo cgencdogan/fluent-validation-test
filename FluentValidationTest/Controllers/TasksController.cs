@@ -1,3 +1,4 @@
+using FluentValidationTest.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FluentValidationTest.Controllers
@@ -11,6 +12,12 @@ namespace FluentValidationTest.Controllers
         public TasksController(ILogger<TasksController> logger)
         {
             _logger = logger;
+        }
+
+        [HttpPost]
+        public TaskItem Post(TaskItem model)
+        {
+            return model;
         }
     }
 }
